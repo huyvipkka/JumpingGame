@@ -119,31 +119,3 @@ class Enemy(pygame.sprite.Sprite):
         if self.rect.top > ini.SCREEN_HEIGHT:
             self.kill()
  
-def DrawText(screeen, text, font, text_color, x, y):
-    img = font.render(text, True, text_color)    
-    screeen.blit(img, (x, y))   
-    
-def DrawBg(screen, bg_scroll):
-    screen.blit(ini.bg_image, (0, bg_scroll))
-    screen.blit(ini.bg_image, (0, bg_scroll-ini.SCREEN_HEIGHT))
-        
-def DrawPanel1(screen, score):
-    pygame.draw.rect(screen, ini.AQUA, (0, 0, ini.SCREEN_WIDTH, 30))
-    pygame.draw.line(screen, ini.WHITE, (0, 30), (ini.SCREEN_WIDTH, 30), 2)
-    DrawText(screen, f"Score : {score}", ini.font_small, ini.MAROON, 5, 0)
-    
-def DrawPanel2(screen, hight_score):
-    pygame.draw.rect(screen, ini.AQUA, (0, ini.SCREEN_HEIGHT-30, ini.SCREEN_WIDTH, 30))
-    pygame.draw.line(screen, ini.WHITE, (0, ini.SCREEN_HEIGHT-30), (ini.SCREEN_WIDTH, ini.SCREEN_HEIGHT-30), 2)
-    DrawText(screen, f"Hight Score : {hight_score}", ini.font_small, ini.MAROON, 5, ini.SCREEN_HEIGHT-30)
-    
-def ReadFile(url):
-    f = open(url, "r")
-    data = f.read()
-    f.close()
-    return data
-
-def WriteFile(url, data):
-    f = open(url, "w")
-    f.write(data)
-    f.close()

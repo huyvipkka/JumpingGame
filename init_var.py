@@ -46,3 +46,32 @@ pygame.mixer.music.load("assets/music.mp3")
 jump_sound = pygame.mixer.Sound("assets/jump.mp3")
 death_sound = pygame.mixer.Sound("assets/death.mp3")
 quack_sound = pygame.mixer.Sound("assets/quac.mp3")
+
+def DrawText(screeen, text, font, text_color, x, y):
+    img = font.render(text, True, text_color)    
+    screeen.blit(img, (x, y))   
+    
+def DrawBg(screen, bg_scroll):
+    screen.blit(bg_image, (0, bg_scroll))
+    screen.blit(bg_image, (0, bg_scroll-SCREEN_HEIGHT))
+        
+def DrawPanel1(screen, score):
+    pygame.draw.rect(screen, AQUA, (0, 0, SCREEN_WIDTH, 30))
+    pygame.draw.line(screen, WHITE, (0, 30), (SCREEN_WIDTH, 30), 2)
+    DrawText(screen, f"Score : {score}", font_small, MAROON, 5, 0)
+    
+def DrawPanel2(screen, hight_score):
+    pygame.draw.rect(screen, AQUA, (0, SCREEN_HEIGHT-30, SCREEN_WIDTH, 30))
+    pygame.draw.line(screen, WHITE, (0, SCREEN_HEIGHT-30), (SCREEN_WIDTH, SCREEN_HEIGHT-30), 2)
+    DrawText(screen, f"Hight Score : {hight_score}", font_small, MAROON, 5, SCREEN_HEIGHT-30)
+    
+def ReadFile(url):
+    f = open(url, "r")
+    data = f.read()
+    f.close()
+    return data
+
+def WriteFile(url, data):
+    f = open(url, "w")
+    f.write(data)
+    f.close()

@@ -95,9 +95,9 @@ while game_running:
                 pygame.draw.rect(screen, BLACK, (SCREEN_WIDTH-fade_counter, (y+1)*100, SCREEN_WIDTH, 100))
         if fade_counter >= SCREEN_WIDTH: # 6 dải đen chạy xong
             DrawText(screen,f"---------Game Over---------", font_big, WHITE, 10, 200)
-            DrawText(screen,f"-Score: {score}", font_big, WHITE, 40, 250)
-            DrawText(screen,f"-Hight Score: {highest_score}", font_big, WHITE, 40, 300)
-            DrawText(screen,f"-PRESS SPACE TO PLAY AGAIN", font_big, WHITE, 40, 350)
+            DrawText(screen,f"Score: {score}", font_big, WHITE, 5, 250)
+            DrawText(screen,f"Hight Score: {highest_score}", font_big, WHITE, 5, 300)
+            DrawText(screen,f"PRESS SPACE TO PLAY AGAIN", font_big, WHITE, 5, 350)
             
         if key[pygame.K_SPACE]: # reset các thông số
             score = 0
