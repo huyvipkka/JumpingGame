@@ -11,11 +11,12 @@ TEAL = (0,128,128)
 NAVY = (0,0,128)
 MAROON = (128,0,0)
 AQUA = (0,255,255)
+COLORS = (WHITE,PURPLE,GREEN,RED,MAROON,AQUA,NAVY)
 
 pygame.init()
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT+30))
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Jumping Game")
 
 clock = pygame.time.Clock()
@@ -28,7 +29,7 @@ scroll = 0
 bg_scroll = 0
 
 game_running = True
-game_over = False
+game_mode = ""
 score = 0
 fade_counter = 0 
 
@@ -39,7 +40,6 @@ bird_image = pygame.image.load("assets/bird.png").convert_alpha()
 
 font_small = pygame.font.SysFont("Lucida Sans", 20)
 font_big = pygame.font.SysFont("Lucida Sans", 24)
-
 
 pygame.mixer.init()
 pygame.mixer.music.load("assets/music.mp3")
