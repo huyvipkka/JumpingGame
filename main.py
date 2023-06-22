@@ -24,7 +24,7 @@ while game_running:
     clock.tick(FPS)
     if game_mode == "start":
         start_btn = Button("Start Game", font_big, WHITE, AQUA, (130, 275, 140, 50))
-        if start_btn.check("K_RETURN", "K_SPACE"):
+        if start_btn.check(pygame.K_RETURN, pygame.K_SPACE):
             starting = True
         if not starting:
             screen.fill(BLACK)

@@ -23,11 +23,11 @@ class Button:
         key = pygame.key.get_pressed()
         pos = pygame.mouse.get_pos()
         for k in keys_pressed:
-            if key[getattr(pygame, k)]:
+            if key[k]:
                 return True
+
         if self.rect.collidepoint(pos[0], pos[1]):
-            for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    return True
+            if pygame.mouse.get_pressed()[0]:
+                return True
         return False
         
